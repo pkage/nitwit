@@ -1,0 +1,42 @@
+// twitposts
+
+.twitpost-panel {
+	display: flex;
+	flex-direction: row;
+}
+
+.twitpost-image {
+	height: 4rem;
+	width: 4rem;
+	margin: 1rem;
+}
+
+.twitpost-input {
+	height: 4rem;
+	margin: 1rem;
+	font-size: 2rem;
+	margin-left: 0px;
+	display: inline-block;
+	resize: none;
+	overflow: none;
+}
+
+.twitpost-button-group {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 1rem;
+	margin-top: 0px;
+}
+
+.twitpost-cancel {
+	margin-right: 1rem;
+}
+
+.twitpost-aligner {
+	width: 6rem;
+}
+
+.twitpost-charcount {
+	font-size: 14px;
+}

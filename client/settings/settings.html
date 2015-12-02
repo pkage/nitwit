@@ -1,0 +1,82 @@
+<template name="settings">
+	{{> navigation}}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-1 col-md-3 visible-lg-block visible-md-block">
+				{{> accountOverview}}
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active"><a class="clickable">accounts</a></li>
+					<li><a class="clickable">about</a></li>
+				</ul>
+				<br>
+			</div>
+			<div class="col-md-7">
+				<div class="panel panel-default" id="accountsettings">
+					<div class="panel-heading">
+						<h3 class="panel-title">account settings</h3>
+					</div>
+					<div class="panel-body">
+						<form class="form-horizontal" id="usernameForm">
+							<div class="form-group">
+								<label for="usernameInput" class="col-sm-2 control-label">username</label>
+								<div class="col-sm-10">
+									<input type="text" id="usernameInput" class="form-control" placeholder="username" value="{{userName}}" disabled>
+									<i>you can't change this.</i>
+								</div>
+							</div>
+						</form>
+
+						<form class="form-horizontal" id="fullnameForm">
+							<div class="form-group">
+								<label for="usernameInput" class="col-sm-2 control-label">full name</label>
+								<div class="col-sm-10">
+									<input type="text" id="fullnameInput" class="form-control" placeholder="full name" value="{{userFullName}}" required autocomplete="off">
+									<i>your display name on nitwit.</i>
+								</div>
+							</div>
+						</form>
+
+						<form class="form-horizontal" id="colorForm">
+							<div class="form-group">
+								<label for="usernameInput" class="col-sm-2 control-label">color</label>
+								<div class="col-sm-10">
+									<div class="input-group" id="colorInputGroup">
+										<input type="text" id="colorInput" class="form-control" placeholder="full name" value="{{userColor}}" required autocomplete="off">
+										<span class="input-group-addon"><i></i></span>
+									</div>{{colorHelper}}
+									<i>your display color on nitwit.</i>
+								</div>
+							</div>
+						</form>
+
+						<form class="form-horizontal" id="bioForm">
+							<div class="form-group">
+								<label for="usernameInput" class="col-sm-2 control-label">bio</label>
+								<div class="col-sm-10">
+									<textarea type="text" id="bioInput" class="form-control" placeholder="your bio" required autocomplete="off">{{userBio}}</textarea>
+									<span class="align-baselines">
+										<i>your bio, as it will display to others.</i>
+										<span class="spacer"></span>
+										<button id="submitBioForm" type="submit" class="clickable linkbutton">save</button>
+									</span>
+								</div>
+							</div>
+						</form>
+
+					</div>
+				</div>
+
+
+				<div class="panel panel-default" id="about">
+					<div class="panel-heading">
+						<h3 class="panel-title">about</h3>
+					</div>
+					<div class="panel-body">
+						<p>created in a few days by <a target="blank" href="http://kagelabs.org/">patrick kage</a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</template>

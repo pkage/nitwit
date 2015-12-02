@@ -1,0 +1,29 @@
+.bottomtools {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: 1rem;
+	margin-right: 1rem;
+	font-size: 1.5em;
+}
+
+.twit-tool {
+	cursor: pointer;
+	color: #ccc;
+	margin-right: 1rem;
+	margin-left: 1rem;
+	transition: color .25s;
+	&:hover {
+		color: #2d2d2d;
+	}
+}
+
+.tool-vertspacer {
+	height: 1em;
+	border: 1px solid #ddd;
+	margin-right: 1rem;
+	margin-left: 1rem;
+}
+
+.star-yellow {
+	color: #f1c40f;
+}

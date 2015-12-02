@@ -1,0 +1,31 @@
+<template name="navigation">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">nitwit</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{{pathFor 'home'}}" data-link="home">home</a></li>
+					<li><a href="{{pathFor 'dm'}}" data-link="dm">dm</a></li>
+					<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{userFullName}} <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{{pathFor 'settings'}}" data-link="settings">settings</a></li>
+							<li class="divider"></li>
+							<li><a id="logout" class="clickable">logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	{{> sAlert}}
+	{{bounceLoggedOutUsers}}
+</template>

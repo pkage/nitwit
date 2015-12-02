@@ -1,0 +1,16 @@
+<template name="twitpost">
+	<form class="panel panel-default" id="twitpostForm">
+		<div class="twitpost-panel">
+			<img class="image-border twitpost-image" src="{{userImage}}">
+			<textarea class="form-control twitpost-input" placeholder="what's happening?" id="twitpostInput" maxlength="145" rows="1" required></textarea>
+		</div>
+
+		<div class="twitpost-button-group" style="display: none;">
+			<span class="twitpost-aligner"></span>
+			<span class="twitpost-charcount"><mark>{{charCount}}</mark> characters remaining</span>
+			<span class="spacer"></span>
+			<button class="btn btn-default twitpost-cancel" type="button">cancel</button>
+			<button type="submit" class="btn btn-primary"><span class="center-children">post&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></span></button>
+		</div>
+	</form>
+</template>

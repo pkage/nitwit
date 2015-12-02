@@ -1,0 +1,52 @@
+.vcenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fullwidth {
+	width: 100%;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.noresize {
+	resize: none;
+}
+
+.center-children {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.spacer {
+	flex-grow: 1;
+}
+
+.image-border {
+	border-radius: 5px;
+}
+
+.rowreverse {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.align-baselines {
+	display: flex;
+	align-items: baseline;
+}
+
+.bio-block {
+	display: inline-block;
+	margin-left: 1rem;
+}
+
+.align-top {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}

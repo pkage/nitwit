@@ -1,0 +1,23 @@
+// twit structure (Twits)
+{
+	"author": "_id",
+	"hashtags": [],
+	"mentions": [],
+	"body": "twitty",
+	"original": "original",
+	"timestamp": ISODate()
+}
+
+// msg structure (Messages)
+{
+	"from": "_id",
+	"to": "_id",
+	"timestamp": ISODate(),
+	"msg": "hello world"
+}
+
+// star structure (Stars)
+{
+	"from": "_id",
+	"target": "_id"
+}

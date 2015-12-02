@@ -1,0 +1,22 @@
+.linkbutton {
+	border: 0px;
+	background-color: rgba(0,0,0,0);
+	color: rgb(51, 122, 183);
+	&:hover {
+		text-decoration: underline;
+	}
+
+}
+
+.navbar {
+	border-radius: 0px;
+}
+
+a, button {
+	outline: none;
+}
+
+body {
+	font-family: Roboto, sans-serif;
+	background-color: #fafafa;
+}

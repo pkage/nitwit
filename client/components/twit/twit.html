@@ -1,0 +1,24 @@
+<template name="twit">
+	<div class="panel panel-default" id="{{_id}}">
+		<div class="panel-heading center-children">
+			<b>{{authorName}}</b>&nbsp;<i>@{{authorHandle}}</i>
+			<span class="spacer"></span>
+			<i class="clickable" data-toggle="tooltip" data-placement="top" title="{{date}}">{{timeago}}</i>
+		</div>
+		<div class="panel-body">
+			<h2>{{{body}}}</h2>
+		</div>
+		<div class="bottomtools">
+			<span class="spacer"></span>
+			<span class="glyphicon glyphicon-comment twit-tool"></span>
+			<span class="glyphicon glyphicon-flag twit-tool"></span>
+			<span class="twit-tool align-baselines star-twit">
+				<span class="glyphicon {{haveStarred}}"></span>
+				<span>{{starCount}}</span>
+			</span>
+			<span class="tool-vertspacer {{hiddenIfNotOwned}}"></span>
+			<span class="glyphicon glyphicon-trash twit-tool {{hiddenIfNotOwned}}"></span>
+		</div>
+	</div>
+
+</template>
