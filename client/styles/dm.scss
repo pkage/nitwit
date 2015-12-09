@@ -1,0 +1,63 @@
+.dm-fullscreen {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.dm-messageview {
+	display: flex;
+	flex-direction: column;
+}
+
+.dm-fullheight {
+	flex-grow: 1;
+	display: flex;
+}
+
+.dm-messagelist {
+	flex-grow: 1;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column-reverse;
+	margin-bottom: 1em;
+	min-height: min-content;
+}
+
+.dm-input {
+	display: flex;
+	flex-direction: row;
+	height: 3em;
+
+	> .form-control {
+		flex-grow: 1;
+	}
+}
+
+.dm-userlist {
+	overflow-y: auto;
+}
+
+.dm-ownmessage {
+	display: flex;
+	flex-direction: row-reverse;
+	margin-bottom: .25em;
+	> .dm-message {
+		display: inline-block;
+		background-color: #337ab7;
+		padding: 1em;
+		padding-top: .5em;
+		padding-bottom: .5em;
+		border-radius: 5px;	
+		color: #fff;	
+	}
+}
+
+.dm-othermessage {
+	@extend .dm-ownmessage;
+	flex-direction: row;
+	> .dm-message {
+		background-color: #ddd;
+		color: #000;
+
+	}
+}

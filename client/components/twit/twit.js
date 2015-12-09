@@ -31,6 +31,15 @@ Template.twit.helpers({
 	},
 	'haveStarred': function() {
 		return Stars.find({target: this._id, from: Meteor.userId()}).count() ? "glyphicon-star star-yellow" : "glyphicon-star-empty";
+	},
+	'processedBody': function() {
+		var processed = this.body;
+		for (var i = 0; i < this.mentions.length; i++) {
+			processed = processed.replace('@' + this.mentions[i], '<a href="/user/' + this.mentions[i] + '">@' + this.mentions[i] + '</a>')	
+		}
+		
+
+		return processed;
 	}
 });
 

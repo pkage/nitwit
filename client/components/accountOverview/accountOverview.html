@@ -1,11 +1,11 @@
 <template name="accountOverview">
 	<div class="panel panel-default">
-		<div class="account-overview-bg" style="background-color: {{userColor}};"></div>
+		<div class="account-overview-bg" style="background-color: {{userColor id=id}};"></div>
 		<div>
-			<img src="{{userImage}}" class="img-rounded account-overview-img">
+			<img src="{{userImage id=id}}" class="img-rounded account-overview-img">
 			<p class="account-overview-fields">
-				<b>{{userFullName}}</b><br>
-				@{{userName}}
+				<b>{{userFullName id=id}}</b><br>
+				@{{userName id=id}}
 			</p>
 		</div>
 	</div>

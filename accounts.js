@@ -7,6 +7,7 @@ AccountsTemplates.addFields([
 	displayName: "username",
 	required: true,
 	minLength: 5,
+	errStr: 'invalid or duplicate username',
 	func: function(value){
 		if (Meteor.isClient) {
 			console.log("Validating username...");
@@ -43,7 +44,6 @@ pwd
 
 AccountsTemplates.configure({
 	preSignUpHook: function(pw, info) {
-		
 		var getRandomColor = function() {
 			var letters = '0123456789abcder'.split('');
 			var color = '#';
@@ -53,9 +53,9 @@ AccountsTemplates.configure({
 			return color;
 		}
 		info.profile.color = getRandomColor();
+		info.profile.bio = "anonymous";
+		info.profile.grav_hash = Gravatar.hash(info.email);
 		console.log(info);
-		info.bio = "";
-		info.site = "";
 		return info;
 	}
 })

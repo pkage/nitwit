@@ -1,4 +1,31 @@
 <template name="dm">
-	{{> navigation}}
-	<p>dm</p>
+	<div class="dm-fullscreen">
+		{{> navigation}}
+		<div class="container dm-fullheight">
+			<div class="row dm-fullheight">
+				<div class="col-lg-2 col-md-offset-1 dm-userlist">
+					<ul class="nav nav-pills nav-stacked">
+						{{#each users}}
+						<li class="{{selecteduser}}"><a class="clickable selectuser">{{username}}</a></li>
+						{{/each}}
+					</ul>
+				</div>
+				<div class="col-lg-8 dm-fullheight dm-messageview">
+					<div class="dm-fullheight dm-messagelist">
+						{{#each relevantmessage}}
+						<div class="{{ownmessage}}">
+							<div class="dm-message">
+								{{msg}}
+							</div>
+						</div>
+
+						{{/each}}
+					</div>
+					<form class="dm-input">
+						<input type="text" class="form-control dm-input-box" required placeholder="type something" {{validatemessagetarget}}>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>

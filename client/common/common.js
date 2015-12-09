@@ -1,5 +1,5 @@
 // universal ui helpers
-UI.registerHelper('userName', function(kw) {
+Template.registerHelper('userName', function(kw) {
 	id = (kw && kw.hash.id) ? kw.hash.id : Meteor.userId();
 	try {
 		if (Meteor.userId() != null) {
@@ -13,7 +13,7 @@ UI.registerHelper('userName', function(kw) {
 	}
 });
 
-UI.registerHelper('userFullName', function(kw) {
+Template.registerHelper('userFullName', function(kw) {
 	id = (kw && kw.hash.id) ? kw.hash.id : Meteor.userId();
 	try {
 		if (Meteor.userId() != null) {
@@ -27,7 +27,7 @@ UI.registerHelper('userFullName', function(kw) {
 	}
 });
 
-UI.registerHelper('userEmail', function(kw) {
+Template.registerHelper('userEmail', function(kw) {
 	id = (kw && kw.hash.id) ? kw.hash.id : Meteor.userId();
 	try {
 		if (Meteor.userId() != null) {
@@ -38,24 +38,24 @@ UI.registerHelper('userEmail', function(kw) {
 	}
 });
 
-UI.registerHelper('bounceLoggedOutUsers', function() {
+Template.registerHelper('bounceLoggedOutUsers', function() {
 	if (Meteor.userId() == null) {
-		Router.go('splash');
+		Router.go('/');
 	}
 });
 
-UI.registerHelper('userImage', function(kw) {
+Template.registerHelper('userImage', function(kw) {
 	id = (kw && kw.hash.id) ? kw.hash.id : Meteor.userId();
 	try {
 		if (Meteor.userId() != null) {
-			return Gravatar.imageUrl(Gravatar.hash(Meteor.users.findOne({_id: id}).emails[0].address), {secure: true});
+			return Gravatar.imageUrl(Meteor.users.findOne({_id: id}).profile.grav_hash, {secure: true});
 		}
 	} catch(err) {
 		// ignore
 	}
 });
 
-UI.registerHelper('userColor', function(kw) {
+Template.registerHelper('userColor', function(kw) {
 	id = (kw && kw.hash.id) ? kw.hash.id : Meteor.userId();
 	try {
 		if (Meteor.userId() != null) {
@@ -67,7 +67,7 @@ UI.registerHelper('userColor', function(kw) {
 });
 
 
-UI.registerHelper('userBio', function(kw) {
+Template.registerHelper('userBio', function(kw) {
 	id = (kw && kw.hash.id) ? kw.hash.id : Meteor.userId();
 	try {
 		if (Meteor.userId() != null) {
@@ -78,7 +78,7 @@ UI.registerHelper('userBio', function(kw) {
 	}
 })
 
-UI.registerHelper('userEscapedBio', function(kw) {
+Template.registerHelper('userEscapedBio', function(kw) {
 	id = (kw && kw.hash.id) ? kw.hash.id : Meteor.userId();
 	try {
 		if (Meteor.userId() != null) {

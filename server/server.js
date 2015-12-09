@@ -12,6 +12,9 @@ Meteor.methods({
 	},
 	'userExists': function(username){
 		check(username, String);
+		if (/[^a-zA-Z\d]/.test(username)) {
+			return true;
+		}
 		return !!Meteor.users.findOne({username: username});
 	},
 	'update_color': function(color) {
@@ -29,9 +32,9 @@ Meteor.methods({
 		for (var i = 0; i < words.length; i++) {
 			var word = words[i];
 			if (/^(\@)\w/.test(word)) {
-				mentions.push(word.substr(1));
+				mentions.push(word.substr(1).split(/[^a-zA-Z\d]/)[0]);
 			} else if (/^(\#)\w/.test(word)) {
-				hashtags.push(word.substr(1));
+				hashtags.push(word.substr(1).split(/[^a-zA-Z\d]/)[0]);
 			}
 		}
 
@@ -80,5 +83,16 @@ Meteor.methods({
 		check(text, String);
 		escaped = _.escape(text).replace(/\n/g, '<br>');
 		return Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.bio': {original: text, escaped: escaped}}});
+	},
+	'direct_message': function(target, text) {
+		bounceLoggedOut();
+		check(text, String);
+		check(target, String);
+		return Messages.insert({
+			'from': Meteor.userId(),
+			'to': target,
+			'timestamp': new Date(),
+			'msg': text
+		})
 	}
 })

@@ -1,0 +1,22 @@
+<template name="user">
+	{{> navigation}}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-md-offset-1">
+
+				{{> accountOverview id=_id}}
+				<p class="align-baselines">
+					<span class="glyphicon glyphicon-info-sign"></span>
+					<div class="bio-block">
+						{{{userEscapedBio id=_id}}}
+					</div>
+				</p>
+			</div>
+			<div class="col-md-7">
+				{{> twitpost}}
+				<br>
+				{{> stream selector=sselector}}
+			</div> 
+		</div>
+	</div>
+</template>
